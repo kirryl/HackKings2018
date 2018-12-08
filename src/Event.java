@@ -8,7 +8,7 @@ public class Event {
     private String endTime;
 
 
-    public void event(String eventName, Date eventDate, String eventLocation, ArrayList<User> eventMembers, String eventStartTime, String eventEndTime) { //existing event
+    Event(String eventName, Date eventDate, String eventLocation, ArrayList<User> eventMembers, String eventStartTime, String eventEndTime) { //existing event
     name = eventName;
     date = eventDate;
     location = eventLocation;
@@ -16,7 +16,7 @@ public class Event {
     startTime = eventStartTime;
     endTime = eventEndTime;
     }
-    public void event(String eventName, Date eventDate, String eventLocation, String eventStartTime, String eventEndTime) { //existing event
+    Event(String eventName, Date eventDate, String eventLocation, String eventStartTime, String eventEndTime) { //existing event
         name = eventName;
         date = eventDate;
         location = eventLocation;
@@ -69,11 +69,6 @@ public class Event {
         endTime = newEndTime;
         return endTime;
     }
-
-
-
-
-
 
 }
 
