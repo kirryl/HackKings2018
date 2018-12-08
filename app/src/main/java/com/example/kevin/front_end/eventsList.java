@@ -10,4 +10,8 @@ public class eventsList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_list);
     }
+
+    private void clickAction() {
+
+    }
 }
