@@ -30,6 +30,29 @@ public class User {
         listOfEvents.add(event);
         return listOfEvents;
     }
-
+    // added these methods pls check to see if they're ok, i'm dying
+    public ArrayList<User> getListOfFriends() { return listOfFriends;}
+    public ArrayList<User> addFriend(User user) {
+        listOfFriends.add(user);
+        return listOfFriends;
+    }
+    public int countCommonEvents(User otherUser) {
+        int counter = 0;
+        for (int i = 0; i < listOfEvents.size(); i++) {
+            if (otherUser.getListOfEvents().contains(listOfEvents.getIndex(i))) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public int mutualFriends(User otherUser) {
+       int counter = 0;
+       for (int i = 0; i < listOfFriends.size(); i++) {
+           if (otherUser.getListOfFriends().contains(listOfFriends.getIndex(i))) {
+               counter ++;
+           }
+       }
+       return counter;
+    }
 
 }
