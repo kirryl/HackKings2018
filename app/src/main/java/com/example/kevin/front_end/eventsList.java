@@ -28,7 +28,6 @@ public class eventsList extends AppCompatActivity {
                 createEventPage();
             }
         });
-
     }
 
     private void generateListContent() {
@@ -38,8 +37,7 @@ public class eventsList extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        //inflater.inflate(R.menu.menu_events_page, menu);
+        new MenuInflater(this).inflate(R.menu.menu_events_page, menu);
         return true;}
 
     @Override
@@ -47,7 +45,7 @@ public class eventsList extends AppCompatActivity {
             // Handle item selection
             switch (item.getItemId()) {
                 case R.id.action_new:
-                    createNewEvent();
+                    startActivity(new Intent(this, newEvent.class));
                     return true;
                 case R.id.action_settings:
                     return true;
@@ -56,12 +54,9 @@ public class eventsList extends AppCompatActivity {
             }
         }
 
-        public void createNewEvent() {
-            Intent intent = new Intent(eventsList.this, newEvent.class);
-            startActivity(intent);
-        }
 
-    public void createEventPage() {
+
+    private void createEventPage() {
         Intent intent = new Intent(eventsList.this, eventsPage.class);
         startActivity(intent);
     }

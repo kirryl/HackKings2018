@@ -10,29 +10,49 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <EditText
-                android:id="@+id/EditTextName"
-                android:layout_height="wrap_content"
-                android:hint="Enter Event Name"
-                android:inputType="textPersonName"
-                android:layout_width="match_parent">
-        </EditText>
-        <CalendarView
+        <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/calenderView"
-                app:layout_constraintTop_toBottomOf="@+id/EditTextName"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="40dp">
+                android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <EditText
+                        android:id="@+id/EditTextName"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Event Name"
+                        android:inputType="textPersonName"
+                        android:layout_width="match_parent">
+                </EditText>
+                <CalendarView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/calenderView"
+                        app:layout_constraintTop_toBottomOf="@+id/EditTextName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="40dp">
 
-        </CalendarView>
-        <Button
-                android:text="Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button"
-                android:enabled="true"/>
+                </CalendarView>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <android.support.v7.widget.RecyclerView
+                            android:layout_width="189dp"
+                            android:layout_height="match_parent" android:id="@+id/timeHour">
+                    </android.support.v7.widget.RecyclerView>
+                    <android.support.v7.widget.RecyclerView
+                            android:layout_width="202dp"
+                            android:layout_height="match_parent" android:scrollbars="vertical"
+                            android:id="@+id/timeMin"/>
+                </LinearLayout>
+                <Button
+                        android:text="@string/confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buttonConfirm"
+                        android:enabled="true"/>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
