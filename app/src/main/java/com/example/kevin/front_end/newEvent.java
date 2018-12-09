@@ -10,19 +10,13 @@ import android.widget.Button;
 
 public class newEvent extends AppCompatActivity {
 
-    final Button confirmEvent = (Button)findViewById(R.id.button);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTitle("New Event");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event);
-        confirmEvent.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
 
-            }
-    });
 
     }
 
