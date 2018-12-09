@@ -3,6 +3,6 @@
       xmlns:tools="http://schemas.android.com/tools" tools:context=".eventsList">
     <item class="@+id/action_new" android:title="@string/new_event"
           android:id="@+id/action_new"/>
-    <item class="@+id/action_settings" android:title="@string/action_settings"
-          android:orderInCategory="100"  />
+    <item class="@+id/action_settings" android:title="New Connections"
+          android:orderInCategory="100" android:id="@+id/action_friends"/>
 </menu>

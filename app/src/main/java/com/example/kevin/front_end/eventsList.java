@@ -47,7 +47,8 @@ public class eventsList extends AppCompatActivity {
                 case R.id.action_new:
                     startActivity(new Intent(this, newEvent.class));
                     return true;
-                case R.id.action_settings:
+                case R.id.action_friends:
+                    startActivity(new Intent(this, eventFriends.class));
                     return true;
                 default:
                     return super.onOptionsItemSelected(item);
