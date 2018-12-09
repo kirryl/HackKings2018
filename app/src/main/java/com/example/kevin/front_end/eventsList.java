@@ -1,31 +1,22 @@
 package com.example.kevin.front_end;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.*;
+import android.widget.*;
 
 public class eventsList extends AppCompatActivity {
 
     private ArrayList<String> data = new ArrayList<String>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("Events");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView lv = (ListView) findViewById(R.id.listview);
@@ -34,37 +25,45 @@ public class eventsList extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(eventsList.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
+                createEventPage();
             }
         });
+
     }
 
     private void generateListContent() {
-        for(int i = 0; i < 55; i++) {
+        for(int i = 0; i < 3; i++) {
             data.add("This is row number " + i);
         }
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_events_page, menu);
-        return true;
-    }
+        MenuInflater inflater = getMenuInflater();
+        //inflater.inflate(R.menu.menu_events_page, menu);
+        return true;}
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        public boolean onOptionsItemSelected(MenuItem item) {
+            // Handle item selection
+            switch (item.getItemId()) {
+                case R.id.action_new:
+                    createNewEvent();
+                    return true;
+                case R.id.action_settings:
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
         }
 
-        return super.onOptionsItemSelected(item);
+        public void createNewEvent() {
+            Intent intent = new Intent(eventsList.this, newEvent.class);
+            startActivity(intent);
+        }
+
+    public void createEventPage() {
+        Intent intent = new Intent(eventsList.this, eventsPage.class);
+        startActivity(intent);
     }
 
     private class MyListAdaper extends ArrayAdapter<String> {
@@ -75,6 +74,8 @@ public class eventsList extends AppCompatActivity {
             mObjects = objects;
             layout = resource;
         }
+
+
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
@@ -100,6 +101,7 @@ public class eventsList extends AppCompatActivity {
             return convertView;
         }
     }
+
     public class ViewHolder {
 
         ImageView thumbnail;
