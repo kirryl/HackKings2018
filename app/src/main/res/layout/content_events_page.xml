@@ -15,22 +15,27 @@
 
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
             <TextView
-                    android:text="Host"
+                    android:text="Author"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textDate"/>
+                    android:layout_height="wrap_content" android:id="@+id/textAuthor"/>
         </TableRow>
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
             <TextView
                     android:text="Date"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView3"/>
+                    android:layout_height="wrap_content" android:id="@+id/textDate"/>
         </TableRow>
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
             <TextView
                     android:text="Location"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView4"/>
+                    android:layout_height="wrap_content" android:id="@+id/textLocation"/>
         </TableRow>
-        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView
+                    android:text="Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textTime"/>
+        </TableRow>
     </TableLayout>
 </android.support.v4.widget.NestedScrollView>
