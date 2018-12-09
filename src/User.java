@@ -5,9 +5,9 @@ public class User {
     private ArrayList<User> listOfFriends;
 
 
-    User () {
-
-
+    User (String xUserName, String xHomeLocation) {
+        userName = xUserName;
+        homeLocation = xHomeLocation;
     }
     public String getUserName() {
         return userName;

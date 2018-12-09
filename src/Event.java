@@ -1,32 +1,45 @@
+import java.util.HashMap;
+
 public class Event {
 
     private String name;
     private Date date;
     private String location; //add location class for this
-    private ArrayList<User> members;
+    private UserNode author;
     private String startTime;
     private String endTime;
 
-
-    Event(String eventName, Date eventDate, String eventLocation, ArrayList<User> eventMembers, String eventStartTime, String eventEndTime) { //existing event
+    Event(String eventName, Date eventDate, String eventLocation, User eventAuthor, String eventStartTime, String eventEndTime) { //existing event
     name = eventName;
     date = eventDate;
     location = eventLocation;
-    ArrayList<User> members = members;
+    author = eventAuthor;
+    members = eventmembers;
     startTime = eventStartTime;
     endTime = eventEndTime;
     }
-    Event(String eventName, Date eventDate, String eventLocation, String eventStartTime, String eventEndTime) { //existing event
+    Event(String eventName, Date eventDate, String eventLocation, User eventAuthor, String eventStartTime, String eventEndTime) { //new event
         name = eventName;
         date = eventDate;
         location = eventLocation;
-        members = new ArrayList<User>();
+        author = eventAuthor;
         startTime = eventStartTime;
         endTime = eventEndTime;
     }
 
-    public String getName() {
-        return name;
+    public boolean invite(User inviter, User invitee) {
+        if (invitee) {
+            UserNode tempNode = searchTree(inviter);
+            if (tempNode) {
+                tempNode.addGuest(new UserNode(invitee));
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public UserNode searchTree(User findUsers) {
+        author.searchTree(findUsers);
     }
 
     public String setName(String newName) {
@@ -69,7 +82,6 @@ public class Event {
         endTime = newEndTime;
         return endTime;
     }
-
 }
 
 
