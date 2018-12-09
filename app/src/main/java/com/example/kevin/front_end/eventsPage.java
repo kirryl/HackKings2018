@@ -5,9 +5,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.view.*;
+import android.widget.*;
+import org.w3c.dom.Text;
 
 public class eventsPage extends AppCompatActivity {
+
+    //Variables displayed in the Events Page
+    private TextView author = (TextView) findViewById(R.id.textAuthor);
+    private TextView date = (TextView) findViewById(R.id.textDate);
+    private TextView location = (TextView) findViewById(R.id.textLocation);
+    private TextView time = (TextView) findViewById(R.id.textTime);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
